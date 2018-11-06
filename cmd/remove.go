@@ -26,7 +26,7 @@ func removeRun(cmd *cobra.Command, args []string) {
 		log.Fatalln(args[0], "is not a valid label\n", err)
 	}
 
-	if i > 0 && i < len(items) {
+	if i > 0 && i <= len(items) {
 		text := items[i-1].Text
 		items = append(items[:i-1], items[i:]...)
 		fmt.Printf("%q %v\n", text, "removed")
