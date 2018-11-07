@@ -15,7 +15,7 @@ var addCmd = &cobra.Command{
 	Use:     "add",
 	Aliases: []string{"ad"},
 	Short:   "Add a new todo",
-	Long:    `Add will create a new todo item to the list`,
+	Long:    `Add will create a new todo item in the todo list`,
 	Run:     addRun,
 }
 

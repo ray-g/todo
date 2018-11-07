@@ -17,7 +17,7 @@ var (
 
 var rootCmd = &cobra.Command{
 	Use:   "todo",
-	Short: "Todo is a todo application",
+	Short: "Todo is a todo application manages todo items",
 }
 
 func init() {

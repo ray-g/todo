@@ -11,8 +11,8 @@ import (
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Aliases: []string{"ls"},
-	Short:   "List the todos",
-	Long:    `Listing the todos`,
+	Short:   "List the todo items",
+	Long:    `Listing the todo items`,
 	Run:     listRun,
 }
 
@@ -32,10 +32,10 @@ func listRun(cmd *cobra.Command, args []string) {
 func init() {
 	rootCmd.AddCommand(listCmd)
 
-	listCmd.Flags().BoolVarP(&printOpt.Done, "done", "n", false, "Show 'Done' Todos")
-	listCmd.Flags().BoolVarP(&printOpt.All, "all", "a", false, "Show all Todos")
-	listCmd.Flags().BoolVarP(&printOpt.LastWeek, "lastweek", "w", false, "Show 'Done' Todos in last week")
-	listCmd.Flags().BoolVarP(&printOpt.LastMonth, "lastmonth", "m", false, "Show 'Done' Todos in last month")
-	listCmd.Flags().Int64VarP(&printOpt.Days, "days", "d", 0, "Show 'Done' Todos in last n days")
+	listCmd.Flags().BoolVarP(&printOpt.Done, "done", "n", false, "Show 'Done' Todo Items")
+	listCmd.Flags().BoolVarP(&printOpt.All, "all", "a", false, "Show all Todo Items")
+	listCmd.Flags().BoolVarP(&printOpt.LastWeek, "lastweek", "w", false, "Show 'Done' Todo Items in last week")
+	listCmd.Flags().BoolVarP(&printOpt.LastMonth, "lastmonth", "m", false, "Show 'Done' Todo Items in last month")
+	listCmd.Flags().Int64VarP(&printOpt.Days, "days", "d", 0, "Show 'Done' Todo Items in last n days")
 	listCmd.Flags().BoolVarP(&printOpt.LongTime, "longtime", "l", false, "Show time in long format (including clock)")
 }
