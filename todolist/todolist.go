@@ -100,7 +100,7 @@ func (s ByTimeAdd) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
 func (s ByTimeAdd) Less(i, j int) bool {
 	if s[i].Done == s[j].Done {
 		if s[i].Priority == s[j].Priority {
-			return s[i].TimeAdd.Before(s[j].TimeAdd)
+			return s[i].TimeAdd.After(s[j].TimeAdd)
 		}
 		return s[i].Priority < s[j].Priority
 	}
@@ -115,7 +115,7 @@ func (s ByTimeDone) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
 func (s ByTimeDone) Less(i, j int) bool {
 	if s[i].Done == s[j].Done {
 		if s[i].Priority == s[j].Priority {
-			return s[i].TimeDone.Before(s[j].TimeDone)
+			return s[i].TimeDone.After(s[j].TimeDone)
 		}
 		return s[i].Priority < s[j].Priority
 	}
