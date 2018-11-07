@@ -62,7 +62,7 @@ func (i *Item) label() string {
 
 func (i *Item) prettyDone() string {
 	if i.Done {
-		return "X" + i.TimeDone.Format(timeFormat)
+		return "- " + i.TimeDone.Format(timeFormat)
 	}
 	return ""
 }
